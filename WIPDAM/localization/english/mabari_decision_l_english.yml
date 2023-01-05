@@ -1,0 +1,20 @@
+﻿l_english:
+ # # Puppy Patronage
+ hold_court.8140.t:0 "Puppy Patronage"
+ hold_court.8140.desc:1 "My huntmaster [huntmaster.GetTitledFirstName] approaches carefully, cradling a woolen bundle. \n\nWith a grin, [huntmaster.GetSheHe] pulls back the swaddling, revealing a pair of squinting eyes above a lolling tongue – a puppy! [huntmaster.GetSheHe|U] can hardly keep the excitable furball in [huntmaster.GetHerHis] arms. \n\n"A gift from the finest [ROOT.Char.Custom('get_region_dog_type')] litter I have seen in some time!", [huntmaster.GetSheHe] says between face-licks, "You must take advantage and expand your kennels my [ROOT.Char.GetLadyLord]!""
+ hold_court.8140.a:0 "Our kennels will have no competition!"
+ hold_court.8140.a.tt:0 "All members will be able to take the Adopt Puppy [decision|E]"
+ hold_court.8140.b:0 "Who's a good pup? You are!"
+ hold_court.8140.c:0 "Cats are superior companions."
+ hold_court.8140.d:0 "You are delaying serious petitioners, [huntmaster.GetFirstNameNoTooltip]."
+ # Puppy Patronage decision event
+ da_cultural_decision.0001.t:0 "$hold_court.8140.t$: New Companion"
+ da_cultural_decision.0001.desc:0 "My servants bring me a newborn Mabari puppy, fresh from the renowned [ROOT.Char.GetHouse.GetNameNoTooltip] kennels. \n\nPeeking out from the blankets sniffs a tiny nose, curious about the scents of its new home!"
+ da_cultural_decision.0001.a:0 "You shall serve me well little one!"
+ da_cultural_decision.0001.b:0 "I have changed my mind."
+ # Decision
+ adopt_mabari_decision_name:0 "Adopt Mabari War Hound"
+ adopt_mabari_decision_desc:0 "The Mabari is one of Ferelden's greatest prides. A war hound is as much a status symbol as a vicious aide in battle, if I am up to the challenge of training it..."
+ adopt_puppy_decision_already_pet_tt:0 "Does not already have a pet"
+ adopt_puppy_decision_confirm:0 "Adopt a kennel pup"
+ adopt_mabari_decision_tooltip:0 "$adopt_puppy_decision_confirm$"

@@ -1,0 +1,63 @@
+﻿adopt_mabari_decision = { #To search original files replace mabari with puppy
+	title = adopt_mabari_decision_name
+	picture = "gfx/interface/illustrations/decisions/decision_activity.dds"
+	desc = adopt_mabari_decision_desc
+	selection_tooltip = adopt_mabari_decision_tooltip
+	cooldown = { years = 5 }
+	major = no
+	sort_order = 89
+
+	is_shown = {
+		# Must be have Dog Lords tradition
+		# Mabari are status symbols, must be royalty
+		is_lowborn = no
+		has_cultural_parameter = tradition_dog_lords
+	}
+
+	is_valid_showing_failures_only = {
+		# Does not already have a pet.
+		custom_tooltip = {
+			text = adopt_puppy_decision_already_pet_tt
+			NOR = {
+				any_owned_story = { story_type = story_cycle_pet_dog }
+				any_owned_story = { story_type = story_cycle_pet_cat }
+				has_character_modifier = dog_story_modifier
+				has_character_modifier = dog_story_mabari_modifier
+				has_character_modifier = cat_story_modifier
+			}
+		}
+	}
+
+	effect = {
+		show_as_tooltip = { start_dog_story_cycle_effect = yes }
+		trigger_event = da_cultural_decision.0001
+	}
+
+	cost = { gold = minor_gold_value }
+
+	ai_check_interval = 60
+	
+	ai_potential = {
+		# Has enough gold.
+		short_term_gold >= minor_gold_value
+		NOR = {
+			has_trait = lazy
+			has_trait = callous
+		}
+	}
+
+	ai_will_do = {
+		base = 100
+		# You're richer.
+		modifier = {
+			add = 50
+			faith = { has_doctrine_parameter = gruesome_festivals_active }
+			short_term_gold >= massive_gold_value
+		}
+		modifier = {
+			add = 50
+			faith = { has_doctrine_parameter = gruesome_festivals_active }
+			short_term_gold >= monumental_gold_value
+		}
+	}
+}

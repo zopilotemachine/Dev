@@ -1,0 +1,34 @@
+﻿namespace = da_cultural_decision
+
+##################################################
+# # RANGES
+# 0001 - 0100		Ferelden
+# 
+##################################################
+
+##################################################
+# Puppy Patronage
+# by (originally) Joe Parkin
+##################################################
+
+da_cultural_decision.0001 = { # Event on Mabari puppy adoption
+	type = character_event
+	title = da_cultural_decision.0001.t
+	desc = da_cultural_decision.0001.desc
+	theme = realm
+	override_background = { event_background = throne_room }
+	left_portrait = {
+		character = root
+		animation = happy
+	}
+
+	option = { # Accept
+		name = da_cultural_decision.0001.a
+		start_dog_story_cycle_effect = yes
+	}
+
+	option = { # Change mind
+		name = da_cultural_decision.0001.b
+		add_gold = minor_gold_value
+	}
+}

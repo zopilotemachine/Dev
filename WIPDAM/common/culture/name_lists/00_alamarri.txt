@@ -1,0 +1,171 @@
+name_list_fereldan = {
+    cadet_dynasty_names = {
+		{ "dynnp_Mac" "dynn_Tir" }
+		"dynn_Howe"
+		"dynn_Cousland"
+		"dynn_Theirin"
+		"dynn_Guerrin"
+		"dynn_Hawthorne"
+		"dynn_Stratford"
+		"dynn_Stawell"
+		"dynn_Moore"
+		"dynn_Eremon"
+		"dynn_Elemena'
+		"dynn_Byrland"
+		"dynn_Kendells"
+		"dynn_Sighard"
+		"dynn_Wulff"
+		"dynn_Ceorlic"
+		"dynn_Cauthrien"
+		"dynn_Voric"
+		"dynn_Dryden"
+		"dynn_Myrrdin"
+		"dynn_Ruahn"
+		"dynn_Lendon"
+		"dynn_Neruda"
+		"dynn_Bronach"
+		"dynn_Bryton"
+		"dynn_Darby"
+		"dynn_Donall"
+		"dynn_Dusic"
+		"dynn_Elara"
+		"dynn_Kail"
+		"dynn_Harkwold"
+		"dynn_Dusic"
+		"dynn_Franderel"
+		"dynn_Gilroy"
+		"dynn_Grainne"
+		"dynn_Baranti"
+		"dynn_Parth"
+		"dynn_Perrin"
+		"dynn_Rodolf"
+		"dynn_Telmen"
+		"dynn_Termain"
+		"dynn_Trumhall"
+		"dynn_Krole"
+		"dynn_Vilgard"
+		"dynn_Elstan"
+
+	}
+
+	dynasty_names = {
+		{ "dynnp_Mac" "dynn_Tir" }
+		"dynn_Howe"
+		"dynn_Cousland"
+		"dynn_Theirin"
+		"dynn_Guerrin"
+		"dynn_Hawthorne"
+		"dynn_Stratford"
+		"dynn_Stawell"
+		"dynn_Moore"
+		"dynn_Eremon"
+		"dynn_Elemena'
+		"dynn_Byrland"
+		"dynn_Kendells"
+		"dynn_Sighard"
+		"dynn_Wulff"
+		"dynn_Ceorlic"
+		"dynn_Cauthrien"
+		"dynn_Voric"
+		"dynn_Dryden"
+		"dynn_Myrrdin"
+		"dynn_Ruahn"
+		"dynn_Lendon"
+		"dynn_Neruda"
+		"dynn_Bronach"
+		"dynn_Bryton"
+		"dynn_Darby"
+		"dynn_Donall"
+		"dynn_Dusic"
+		"dynn_Elara"
+		"dynn_Kail"
+		"dynn_Harkwold"
+		"dynn_Dusic"
+		"dynn_Franderel"
+		"dynn_Gilroy"
+		"dynn_Grainne"
+		"dynn_Baranti"
+		"dynn_Parth"
+		"dynn_Perrin"
+		"dynn_Rodolf"
+		"dynn_Telmen"
+		"dynn_Termain"
+		"dynn_Trumhall"
+		"dynn_Krole"
+		"dynn_Vilgard"
+		"dynn_Elstan"
+	}
+		male_names = {
+		Adan Agmo Aidan Albert Aldenon Aldous Alec Alistair Amund Arden Arland Arlen Arrken Arryn Arvid Athlar Augold Auld Avernus
+		Barlin Berand Berchan Bergin Berwick Bevin Boann Bran Branan Braden Brandel Branson Bron Bronach Bryant Bryton Bryce Bryon Cadrim 
+		Cailan Calenhad Caronel Carroll Carver Cassian Ceoric Cerand Clemence Colbert Cole Connor Conobar Cormac Corran Cristof Cullen Cyn 
+		Dairren Daltin Danal Danor Darran Daveth Delrin Denri Derren Devith Donall Donogan Dorval Duncan Eamon Eliias Elmor Elias Fallon 
+		Daran Faryn Fergus Finn Florence Galen Gant Gareth Ghin Giles Godwin Gilmore Greagoir Grisby Guy Habren Hafter Halvor Haren Harritt 
+		Havard Henric Horace Hugin Ira Jacen Jogby Jory Jowan Kail Kendrick Kieran Kristoff Kinnon Landry Leonas Loghain Loren Lowan Maric Malcolm 
+		Markus Matthias Murdock Niall Nolan Nathaniel Murray Oren Oswyn Owain Owen Paivel Parth Perth Phineas Rhys Riordan Roldof Rigby Reginald 
+		Saumel Seggrit Sutherland Tanner Teagan Teoric Temmerly Tavish Thelric Tiranon Torrin Uldred Vaughn Wade Walter Wesley Weylon Wilhelm
+		Ackley Blaen Calder Elden Garrick Landon Marden Oswin Rylan Tranter
+	}
+	female_names = {
+		Adalaide Adria Ailis Alarra Alfstanna Alison Alma Amalia Ambrose Amethyne Anais Anashe Anora Astia Aveline Bedine Bonnie Brigid Bulfa
+		Camenae Celia Cera Clariss Danella Dorcas Eileen Elaina Elarra Elanor Elemena Eliane Elise Ellendra Evelina Fionne Flissa Gainley Goldanna
+		Gwynlian Hannah Haelia Hadley Heather Helena Harwen Illna Iona Holda Illna Iona Jana Joslin Kira Lace Landra Linna Mabene Mairyn 
+		Nida Nera Nacine Oisine Polara Rosamund Sera Sarie Sabin Sophia Tutha Wynne Vera Vellena Afton Demelza Edlyn Kelsie Locke
+		Radella Seldon Sherey Tayte Ulla Brianne Leandra Meghan Moira Sarah
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+	
+	patronym_prefix_male = "dynnpat_pre_mac"
+	patronym_prefix_female = "dynnpat_pre_nic"
+	always_use_patronym = no
+
+	mercenary_names = {
+		{ name = "mercenary_company_the_makers_mabaris" }
+		{ name = "mercenary_company_ash_warriors" }
+		{ name = "mercenary_company_beasts_of_the_bannorn" }
+		{ name = "mercenary_company_the_southron_blades" }
+		{ name = "mercenary_company_amaranthine_legion" }
+		{ name = "mercenary_company_the_dogfacers" }
+	}
+}
+name_list_avvar = {
+
+	male_names = {
+		Amund Arne Bertil Dietmar Gurd Helsdim Olaf Arcill Colban Domnall Dubne Garnait 
+		Martain Nechtan Padraig Sithig Tralin Amund Balak Gurd Havard Kiveal Morvan
+		Ruadan Stiksma
+	}
+	female_names = {
+		Annis Cathal Deirde Ete Bethac Grissal Kattrin Muire Ninne Swannac Agnes Anja
+		Astrid Dagmar Lilja Sigrid Svarah Anashe Kaelah Svarah Tyrdda
+	}
+
+	patronym_suffix_male = "dynnpat_suf_sen"
+	patronym_suffix_female = "dynnpat_suf_dottir"
+	always_use_patronym = yes	
+
+	dynasty_of_location_prefix = "dynnp_ap"
+
+	mercenary_names = {
+		{ name = "mercenary_company_the_sky_men" }
+	}
+
+}
+
+name_list_chasind = {
+
+		male_names = {
+			Aleyn Cenayn Drystan Gwane Helayn Jasce Neel Ronayn Tygell Walgan Cahir Velcorminth Gyera Cole
+	}
+		female_names = {
+			Ancret Branwayn Denore Gaenor Jocosa Lisotta Meryld Tiriel Vanora Yismay Alizera Stoyanka Zorya Morrigan
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+
+	mercenary_names = {
+		{ name = "mercenary_company_the_stalkers" }
+		{ name = "mercenary_company_the_bog_men" }
+	}
+}

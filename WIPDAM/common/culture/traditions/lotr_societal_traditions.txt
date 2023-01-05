@@ -1,0 +1,264 @@
+﻿tradition_mende_anduya = { #Dunedain insularity
+	category = societal
+
+	layers = {
+		0 = diplo
+		1 = mediterranean
+		4 = quill.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_dunedain
+		has_cultural_pillar = heritage_bellakari
+		has_cultural_pillar = heritage_northern_adunaic
+		has_cultural_pillar = heritage_southern_adunaic
+	}	
+	
+	parameters = {
+		dislikes_marrying_outside_of_cultural_heritage = yes
+		ai_doesnt_marry_outside_cultural_heritage = yes
+		courtiers_less_likely_to_leave_same_culture_court = yes
+	}
+	culture_modifier = {
+	}
+	character_modifier = {
+		same_culture_opinion = 10		
+	}
+	county_modifier = {
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						any_in_list = { list = traits this = flag:ethos_communal }
+						any_in_list = { list = traits this = flag:ethos_spiritual }
+						any_in_list = { list = traits this = flag:ethos_stoic }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_communal_spiritual_or_stoic_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							any_neighboring_county = {
+								NOT = {
+									culture = scope:character.culture
+								}
+								culture = {
+									cultural_acceptance = { target = scope:character.culture value >= 40 }
+								}
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = non_tolerated_cultures_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				NOT = {
+					is_divergent_culture = yes
+				}
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				any_in_list = { list = traits this = flag:ethos_egalitarian }
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_slave_society = {
+	category = societal
+
+	layers = {
+		0 = intrigue
+		1 = mediterranean
+		4 = battle.dds
+	}
+	
+	is_shown = {
+		custom_description = {
+            text = not_bellicose_desc
+            any_in_list = { list = traits this = flag:ethos_bellicose }
+        }
+	}
+	
+	parameters = {
+		culture_can_raid_at_sea_even_if_feudal = yes
+		can_launch_slave_expeditions = yes
+	}
+	
+	culture_modifier = { # LOTR: Generally speaking not found of cultures build on slave trading
+		cultural_acceptance_gain_mult = -0.25
+	}
+	
+	character_modifier = {
+		max_loot_mult = 0.25
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			# Ethos requirement.
+			if = {
+				limit = {
+					NOT = {
+						any_in_list = { list = traits this = flag:ethos_bellicose }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_desc
+				}
+			}
+			## Coastal requirement.
+			#if = {
+			#	limit = {
+			#		NOT = {
+			#			any_culture_county = {
+			#				percent >= 0.7
+			#				any_county_province = {
+			#					is_coastal = yes
+			#				}
+			#			}
+			#		}
+			#	}
+			#	add = {
+			#		value = tradition_unfulfilled_criteria_penalty
+			#		desc = high_coastal_percentage_desc
+			#	}
+			#}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	
+	ai_will_do = {
+		value = 50
+		if = {
+			limit = { # The Ioriag-descended peoples (Variags, Tedjin, etc) should have a somewhat higher chance of picking this
+				has_cultural_pillar = heritage_ioriag
+			}
+			multiply = 3
+		}
+	}
+}
+
+tradition_orcish_society = {
+	category = societal
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = battle.dds
+	}
+
+	is_shown = {
+		is_orc = yes
+	}
+	
+	can_pick = {
+		culture_not_pacifistic_trigger = yes
+		is_orc = yes
+	}
+	
+	parameters = {
+		culture_can_raid_at_sea_even_if_feudal = yes
+		can_use_conquest_cbs = yes
+		cb_lower_prestige_level_requirement = yes
+		cheaper_cbs = yes
+	}
+	
+	character_modifier = { # Orcs constantly infight
+		monthly_county_control_change_factor = -0.2
+		vassal_opinion = -30 # An Orc Overlord can never rest easy
+		general_opinion = -10 
+		
+		ai_honor = -40 # Orcs are not an honorable lot!
+		ai_war_chance = 1
+		ai_war_cooldown = -0.25
+	}
+	
+	province_modifier = {
+		levy_size = 0.15
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						any_in_list = { list = traits this = flag:ethos_bellicose }
+						any_in_list = { list = traits this = flag:ethos_spiritual }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_spiritual_desc
+				}
+			}
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							scope:character = {
+								is_ai = no
+							}
+						}
+						NOT = {
+							any_ruler = {
+								count >= 5
+								culture = prev
+								primary_title.tier >= tier_county
+								is_at_war = yes
+							}
+						}
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = rulers_at_war_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+}
